@@ -5,23 +5,18 @@ on:
 jobs:
     build:
         runs-on: ubuntu-latest
+        defaults:
+          run:
+            working-directory: my-app
         steps:                    
             - name: descargar codigo  
               uses: actions/checkout@v4
-                  
-            - name: Ir al directorio
-              run: cd my-app
-            
+                              
             - name: instalar node
               uses: actions/setup-node@v4
             
-            - name: pwd            
-              run: pwd
-
-            - name: instalar dep
-              working-directory: my-app
+            - name: instalar dep       
               run: npm ci
 
-            - name: ejecutar test
-              working-directory: my-app
+            - name: ejecutar test              
               run: npm test
