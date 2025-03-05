@@ -14,9 +14,14 @@ jobs:
             
             - name: instalar node
               uses: actions/setup-node@v4
+            
+            - name: pwd            
+              run: pwd
 
             - name: instalar dep
+              working-directory: my-app
               run: npm ci
 
             - name: ejecutar test
+              working-directory: my-app
               run: npm test
