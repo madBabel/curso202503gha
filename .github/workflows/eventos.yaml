@@ -1,10 +1,10 @@
 name: Eventos
 
 on:    
-   pull_request:
-   workflow_dispatch: 
-   schedule:
-     - cron: "0/5 * * * *"
+   push: 
+      branches: 
+         - main
+         - develop   
 
 
 jobs:
