@@ -16,4 +16,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Step1
-        run: echo "hola mundo, fui lanzado por el evento ${{github.event_name}} ${{github.ref_name}} - devel"
+        run: echo "hola mundo, fui lanzado por el evento ${{github.event_name}}  - devtest"
