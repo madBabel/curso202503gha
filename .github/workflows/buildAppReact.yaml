@@ -19,9 +19,12 @@ jobs:
             - name: Build page
               run: npm run build
               working-directory: my-app 
+            
+            - name: Build page 2
+              run: pwd
 
             - name: Build page 2
-              run: tree -d .
+              run: ls -l
               
             - name: Deploy to gh-pages
               uses: peaceiris/actions-gh-pages@v4
