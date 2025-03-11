@@ -21,7 +21,7 @@ jobs:
             - name: Build page
               run: npm run build
 
-            - name: Build page
+            - name: Build page 2
               run: tree -d .
               
             - name: Deploy to gh-pages
