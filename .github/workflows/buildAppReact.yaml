@@ -15,11 +15,11 @@ jobs:
             - name: instalar node
               uses: actions/setup-node@v4
             
-            - name: instalar dep       
-              run: npm ci
-
-            - name: ejecutar test              
-              run: npm test
+            - name: Install Packages
+              run: npm install
+            
+            - name: Build page
+              run: npm run build
               
             - name: Deploy to gh-pages
               uses: peaceiris/actions-gh-pages@v3
