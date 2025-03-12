@@ -1,14 +1,10 @@
 name: Eventos
 
-
 on:    
  push:
-    
-
-
 jobs:
   job1: 
     runs-on: ubuntu-latest
     steps:
       - name: Step1
-        run: echo "Variable de ORG: ${{vars.ORG_VAR}}"
+        run: echo "Variable de org - ${{vars.ORG_VAR}}"
