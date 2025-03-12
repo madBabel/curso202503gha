@@ -5,6 +5,7 @@ on:
 jobs:
   job1: 
     runs-on: ubuntu-latest
+    environment: pro
     steps:
       - name: Step1
         run: echo "Variable de org - ${{vars.ORG_VAR}}"
