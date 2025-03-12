@@ -1,14 +1,9 @@
 name: Eventos
 
+
 on:    
-
-
-   pull_request: 
-    branches: 
-         - main
-         - develop 
-    types: 
-      - opened
+ push:
+    
 
 
 jobs:
@@ -16,4 +11,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Step1
-        run: echo "hola mundo, fui lanzado por el evento ${{github.event_name}} ${{github.ref_name}} - main"
+        run: echo "Variable de ORG: ${{vars.ORG_VAR}}"
