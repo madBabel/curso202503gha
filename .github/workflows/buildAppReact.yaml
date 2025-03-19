@@ -16,7 +16,7 @@ jobs:
               id: cache
               uses: actions/cache@v4
               with:
-                path: my-app/node-modules
+                path: my-app/node_modules
                 key: ${{ hashFiles('**/package-lock.json') }}
             
             - name: Install Packages
