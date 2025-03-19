@@ -17,7 +17,10 @@ jobs:
               uses: actions/cache@v4
               with:
                 path: my-app/node_modules
-                key: ${{ hashFiles('**/package-lock.json') }}
+                key: my-app-${{ hashFiles('**/package-lock.json') }}
+                restore-keys: |
+                  my-app$-{{ hashFiles('**/package-lock.json') }}
+                  my-app-                  
             
             - name: Install Packages
               if: ${{steps.cache.outputs.cache-hit != 'true'}}
@@ -27,3 +30,9 @@ jobs:
             - name: Build page
               run: npm run build
               working-directory: my-app 
+
+
+            - uses: actions/upload-artifact@v4
+              with:
+                name: my-app
+                path: my-app/build
