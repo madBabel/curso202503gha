@@ -11,8 +11,16 @@ jobs:
                               
             - name: instalar node
               uses: actions/setup-node@v4
+
+            - name: Cache Deps
+              id: cache
+              uses: actions/cache@v4
+              with:
+                path: my-app/node-modules
+                key: ${{ hashFiles('**/package-lock.json') }}
             
             - name: Install Packages
+              if: ${{steps.cache.outputs.cache-hit != 'true'}}
               run: npm install
               working-directory: my-app 
             
