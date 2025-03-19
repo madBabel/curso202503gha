@@ -19,16 +19,3 @@ jobs:
             - name: Build page
               run: npm run build
               working-directory: my-app 
-            
-            - name: Build page 2
-              run: pwd
-
-            - name: Build page 2
-              run: ls -l
-              
-          # - name: Deploy to gh-pages
-          #    uses: peaceiris/actions-gh-pages@v4
-          #    with:
-          #      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          #      publish_dir: ./my-app/build
- 
