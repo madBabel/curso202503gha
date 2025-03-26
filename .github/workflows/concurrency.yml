@@ -7,7 +7,6 @@ concurrency:
 jobs:
     slow-greet:
         runs-on: ubuntu-latest
-
         steps:         
             - name: SlowGreet
               run: |              
@@ -19,5 +18,14 @@ jobs:
             - name: SlowButImportantGreet
               run: |              
                  echo "Hello, I am a slow but important action"
-                 sleep 90
-    
+                 sleep 30
+                 
+            - name: SlowButImportantGreet2
+              run: |              
+                 echo "Hello2, I am a slow but important action"
+                 sleep 30
+
+            - name: SlowButImportantGreet3
+              run: |              
+                 echo "Hello3, I am a slow but important action"
+                 sleep 30
