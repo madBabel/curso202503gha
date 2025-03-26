@@ -12,7 +12,7 @@ jobs:
       - name: Use My custom JS Action
         uses: mad81github/myJSghAction@main
         
-   job2:     
+  job2:     
     runs-on: ubuntu-latest   
     concurrency: grupo1
     steps:
@@ -21,7 +21,7 @@ jobs:
       - name: Use My custom JS Action
         uses: mad81github/myJSghAction@main
         
-   job3:     
+  job3:     
     runs-on: ubuntu-latest    
     concurrency: grupo2
     steps:
