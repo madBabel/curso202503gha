@@ -5,6 +5,25 @@ on:
 jobs:
   job1:     
     runs-on: ubuntu-latest    
+    concurrency: grupo1
+    steps:
+      - name: Step1
+        run: echo "Variable de org - ${{vars.ORG_VAR}}"
+      - name: Use My custom JS Action
+        uses: mad81github/myJSghAction@main
+        
+   job2:     
+    runs-on: ubuntu-latest   
+    concurrency: grupo1
+    steps:
+      - name: Step1
+        run: echo "Variable de org - ${{vars.ORG_VAR}}"
+      - name: Use My custom JS Action
+        uses: mad81github/myJSghAction@main
+        
+   job3:     
+    runs-on: ubuntu-latest    
+    concurrency: grupo2
     steps:
       - name: Step1
         run: echo "Variable de org - ${{vars.ORG_VAR}}"
