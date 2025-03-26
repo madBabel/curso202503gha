@@ -15,8 +15,7 @@ jobs:
         uses: mad81github/myJSghAction@main
         
   job2:     
-    runs-on: ubuntu-latest
-    needs: job1   
+    runs-on: ubuntu-latest     
     concurrency: 
       group: grupo1 
     steps:
