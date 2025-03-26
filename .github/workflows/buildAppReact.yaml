@@ -1,6 +1,7 @@
 name: Build APP
 on: 
-    push: 
+    woworkflow_dispatch:
+        
 
 jobs:
     build:
