@@ -1,34 +1,21 @@
 name:  Concurrency
 on: 
     workflow_dispatch:    
-jobs:
-    slow-greet:
-        runs-on: ubuntu-latest
-        concurrency: 
+concurrency: 
             group: ${{ github.workflow }}-${{ github.ref }} 
             cancel-in-progress: true    
+jobs:
+    slow-greet:
+        runs-on: ubuntu-latest        
         steps:         
             - name: SlowGreet
               run: |              
                  echo "Hello, I am a slow action"
                  sleep 30
     slow-but-important-greet:
-        runs-on: ubuntu-latest    
-        concurrency: 
-            group: ${{ github.workflow }}-${{ github.ref }} 
-            cancel-in-progress: true    
+        runs-on: ubuntu-latest        
         steps:         
             - name: SlowButImportantGreet
               run: |              
                  echo "Hello, I am a slow but important action"
-                 sleep 30
-                 
-            - name: SlowButImportantGreet2
-              run: |              
-                 echo "Hello2, I am a slow but important action"
-                 sleep 30
-
-            - name: SlowButImportantGreet3
-              run: |              
-                 echo "Hello3, I am a slow but important action"
-                 sleep 30
+                 sleep 30          
