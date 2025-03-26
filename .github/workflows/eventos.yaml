@@ -1,4 +1,4 @@
-name: Eventos
+name: Use ACtion
 
 on:    
  workflow_dispatch:
@@ -9,3 +9,7 @@ jobs:
     steps:
       - name: Step1
         run: echo "Variable de org - ${{vars.ORG_VAR}}"
+      - name: Use custom JS Action
+        uses: mad81github/gh-js-action@main
+        with:
+          milliseconds: 2000
