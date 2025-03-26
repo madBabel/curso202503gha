@@ -5,7 +5,9 @@ on:
 jobs:
   job1:     
     runs-on: ubuntu-latest    
-    concurrency: grupo1
+    concurrency: 
+      group: grupo1
+      cancel-in-progress: true
     steps:
       - name: Step1
         run: echo "Variable de org - ${{vars.ORG_VAR}}"
@@ -13,8 +15,11 @@ jobs:
         uses: mad81github/myJSghAction@main
         
   job2:     
-    runs-on: ubuntu-latest   
-    concurrency: grupo1
+    runs-on: ubuntu-latest
+    needs: job1   
+    concurrency: 
+      group: grupo1
+      cancel-in-progress: true
     steps:
       - name: Step1
         run: echo "Variable de org - ${{vars.ORG_VAR}}"
