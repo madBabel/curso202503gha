@@ -1,12 +1,13 @@
 name:  Concurrency
 on: 
     workflow_dispatch:    
+concurrency: 
+    group: ${{ github.workflow }}-${{ github.ref }} 
+    cancel-in-progress: true    
 jobs:
     slow-greet:
         runs-on: ubuntu-latest
-        concurrency: 
-            group: ${{ github.workflow }}-${{ github.ref }} 
-            cancel-in-progress: true
+
         steps:         
             - name: SlowGreet
               run: |              
