@@ -19,5 +19,5 @@ jobs:
             - name: SlowButImportantGreet
               run: |              
                  echo "Hello, I am a slow but important action"
-                 sleep 30
+                 sleep 90
     
