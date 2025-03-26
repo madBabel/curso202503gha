@@ -1,6 +1,6 @@
 name: Build APP
 on: 
-    woworkflow_dispatch:
+    workflow_dispatch:
         
 
 jobs:
